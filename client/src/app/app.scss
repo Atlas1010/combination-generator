@@ -1,0 +1,38 @@
+.app-header {
+  padding: 1rem 1.5rem;
+  background: var(--accent);
+  color: #fff;
+
+  h1 {
+    margin: 0;
+    font-size: 1.5rem;
+  }
+}
+
+:host {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.app-main {
+  flex: 1;
+  width: 100%;
+  max-width: 64rem;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  box-sizing: border-box;
+}
+
+.app-footer {
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  color: #666;
+  font-size: 0.875rem;
+  text-align: center;
+
+  .author {
+    font-weight: 600;
+    color: var(--accent);
+  }
+}

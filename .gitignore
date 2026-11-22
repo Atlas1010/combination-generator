@@ -1,0 +1,31 @@
+# ---- .NET ----
+[Bb]in/
+[Oo]bj/
+*.user
+*.suo
+.vs/
+TestResults/
+*.trx
+coverage*.xml
+
+# ---- Angular / Node ----
+node_modules/
+client/dist/
+client/.angular/
+npm-debug.log*
+
+# ---- IDEs / OS ----
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+
+# ---- Secrets (never commit) ----
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.pfx
+appsettings.*.local.json
+secrets*.json

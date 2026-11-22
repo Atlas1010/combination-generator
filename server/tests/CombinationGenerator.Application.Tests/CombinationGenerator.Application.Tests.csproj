@@ -1,0 +1,5 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <ItemGroup>
+    <ProjectReference Include="..\..\src\CombinationGenerator.Application\CombinationGenerator.Application.csproj" />
+  </ItemGroup>
+</Project>

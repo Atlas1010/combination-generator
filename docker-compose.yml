@@ -1,0 +1,24 @@
+services:
+  api:
+    build: ./server
+    environment:
+      ASPNETCORE_ENVIRONMENT: Production
+      SessionStore__Provider: ${SESSION_STORE:-Memory}
+      ConnectionStrings__Redis: redis:6379
+      Auth__AllowGuestTokensOutsideDevelopment: "true"
+      Auth__GuestSigningKey: ${GUEST_SIGNING_KEY:?Set GUEST_SIGNING_KEY in .env (see .env.example)}
+    read_only: true
+    security_opt: [ "no-new-privileges:true" ]
+    tmpfs: [ /tmp ]
+
+  web:
+    build: ./client
+    ports:
+      - "8080:8080"
+    depends_on: [ api ]
+    security_opt: [ "no-new-privileges:true" ]
+
+  redis:
+    image: redis:7.4-alpine
+    profiles: [ redis ]
+    command: [ "redis-server", "--save", "", "--appendonly", "no" ]
